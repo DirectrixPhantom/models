@@ -10,138 +10,129 @@
 <meta property="og:image:width" content="800">
 <meta property="og:image:height" content="600">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0a0a0a">
-<meta name="credit:rtd_by_mojoexcalibur2000_d5yfj7e.rar" content="Rolling Tape Dispenser, ported for XNALara by mojoexcalibur2000; object from Bloody Good Time, developed by Outerlight, published by Ubisoft Entertainment">
+<meta name="theme-color" content="#f2f2f0">
+<meta name="credit:rtd_by_mojoexcalibur2000_d5yfj7e.rar" content="Nomad Rolling Tape Dispenser, ported for XNALara by mojoexcalibur2000; object from Bloody Good Time, developed by Outerlight, published by Ubisoft Entertainment">
 <meta name="credit:tapedrone1.zip" content="Tape Flyer Class 2, Daz Studio prop by Andreas (Dravuor)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
+  @font-face{font-family:'Redaction';src:url('fonts/Redaction-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:'Redaction';src:url('fonts/Redaction-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
   * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --ink:#111110; --paper:#f2f2f0; --rule:#d9d9d5; --mute:#78786f; }
   body {
-    background:#0a0a0a; color:#e0e0e0;
-    font-family:'Archivo', system-ui, sans-serif;
-    min-height:100vh;
+    background:var(--paper); color:var(--ink);
+    font-family:'Redaction', Georgia, serif; font-size:17px; line-height:1.6;
   }
-  header {
-    border-bottom:1px solid #1e1e1e;
-    padding:18px 30px;
-    display:flex; align-items:center; gap:12px;
+  .wrap { max-width:1000px; margin:0 auto; padding:44px 44px 80px; }
+  header { display:flex; align-items:center; gap:22px; padding-bottom:28px; border-bottom:1px solid var(--ink); }
+  header svg { height:40px; width:auto; display:block; flex:none; }
+  h1 { font-weight:700; font-size:42px; line-height:1.12; letter-spacing:-0.015em; }
+  .row {
+    display:grid; grid-template-columns:160px 1fr 110px 90px auto;
+    align-items:center; gap:24px;
+    padding:18px 0; border-bottom:1px solid var(--rule);
   }
-  header h1 { font-size:22px; font-weight:600; color:#ccc; letter-spacing:1px; }
-  header svg { width:24px; height:24px; color:#888; }
-  main { max-width:1100px; margin:0 auto; padding:40px 24px 80px; }
-  .grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
-    gap:20px;
-  }
-  .card {
-    background:#0f0f0f; border:1px solid #1e1e1e; border-radius:4px;
-    display:flex; flex-direction:column;
-  }
-  .card img {
-    width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
-    background:#111; border-radius:4px 4px 0 0;
-  }
-  .card-body { padding:16px 18px 18px; display:flex; flex-direction:column; gap:6px; flex:1; }
-  .card-title { font-size:17px; color:#ddd; letter-spacing:0.5px; }
-  .card-desc { font-size:15px; color:#777; }
+  .row img { width:160px; aspect-ratio:4/3; object-fit:cover; display:block; background:var(--rule); }
+  .name { font-weight:700; font-size:22px; line-height:1.3; }
+  .meta { color:var(--mute); }
   .btn {
-    margin-top:auto; align-self:flex-start;
     display:inline-flex; align-items:center; gap:8px;
-    background:#111; color:#ccc; border:1px solid #2a2a2a; border-radius:3px;
-    font-family:inherit; font-size:15px; letter-spacing:1px;
-    padding:9px 18px; text-decoration:none;
+    border:1px solid var(--ink); color:var(--ink); background:transparent;
+    font-family:inherit; font-weight:700; font-size:15px; line-height:1;
+    padding:11px 18px; text-decoration:none; white-space:nowrap;
   }
-  .card-desc + .btn, .card-title + .btn { margin-top:12px; }
-  .btn:hover { background:#1c1c1c; border-color:#444; color:#fff; }
-  .btn svg { width:18px; height:18px; }
+  .btn:hover { background:var(--ink); color:var(--paper); }
+  .btn svg { width:17px; height:17px; }
+  @media (max-width:720px) {
+    .wrap { padding:28px 20px 60px; }
+    h1 { font-size:28px; }
+    header svg { height:30px; }
+    .row { grid-template-columns:120px 1fr; gap:6px 18px; }
+    .row img { width:120px; grid-row:span 4; }
+    .name { font-size:19px; }
+    .btn { justify-self:start; margin-top:6px; }
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
-  <i data-lucide="box"></i>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1333.0 746.0" role="img" aria-label="MCI"><g transform="translate(-60.0,720.0) scale(1,-1)" fill="currentColor"><path d="M405 -26H408L630 490V0H748V707H614L406 239L200 707H60V0H177V477Z"/><path d="M1188 -14V107C1048 107 941 214 941 353C941 492 1048 599 1188 599V720C979 720 820 561 820 353C820 145 979 -14 1188 -14Z"/><path d="M1273 0H1393V706H1273Z"/></g></svg>
   <h1>3D Downloads</h1>
 </header>
-<main>
-  <div class="grid">
 
-    <div class="card">
-      <img src="thumbs/tapedrone.jpg" alt="Tape Drone" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Tape Drone</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/tapedrone1.zip"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/tapedrone.jpg" alt="Tape Drone" loading="lazy">
+  <div class="name">Tape Drone</div>
+  <div class="meta">Daz</div>
+  <div class="meta">403 KB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/tapedrone1.zip"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/waste.jpg" alt="Waste Disposal" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Waste Disposal</div>
-        <div class="card-desc">Abyss Blender scene</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/WasteDisposalNew.blend"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/waste.jpg" alt="Waste Disposal" loading="lazy">
+  <div class="name">Waste Disposal</div>
+  <div class="meta">Blender</div>
+  <div class="meta">24 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/WasteDisposalNew.blend"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/rtd.jpg" alt="Rolling Tape Dispenser" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Rolling Tape Dispenser</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/rtd_by_mojoexcalibur2000_d5yfj7e.rar"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/rtd.jpg" alt="Nomad Rolling Tape Dispenser" loading="lazy">
+  <div class="name">Nomad Rolling Tape Dispenser</div>
+  <div class="meta">XNALara</div>
+  <div class="meta">1 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/rtd_by_mojoexcalibur2000_d5yfj7e.rar"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/phantom.jpg" alt="Nude Phantom Model" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Nude Phantom Model</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Phantom_Model.blend"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/phantom.jpg" alt="Nude Phantom Model" loading="lazy">
+  <div class="name">Nude Phantom Model</div>
+  <div class="meta">Blender</div>
+  <div class="meta">41 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Phantom_Model.blend"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/bust.jpg" alt="Phantom Bust" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Phantom Bust</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Bust_Pantom.blend"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/bust.jpg" alt="Phantom Bust" loading="lazy">
+  <div class="name">Phantom Bust</div>
+  <div class="meta">Blender</div>
+  <div class="meta">314 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Bust_Pantom.blend"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/gadgets.jpg" alt="Totally Spies Gadget Pack" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Totally Spies Gadget Pack</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Gadget_Pack_1.blend"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/gadgets.jpg" alt="Totally Spies Gadget Pack" loading="lazy">
+  <div class="name">Totally Spies Gadget Pack</div>
+  <div class="meta">Blender</div>
+  <div class="meta">89 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Gadget_Pack_1.blend"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/nightydrone.jpg" alt="Nighty Drone" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Nighty Drone</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/NightyDrone.zip"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/nightydrone.jpg" alt="Nighty Drone" loading="lazy">
+  <div class="name">Nighty Drone</div>
+  <div class="meta">Blender</div>
+  <div class="meta">10 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/NightyDrone.zip"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/ronuk.jpg" alt="Ronuk Drone Horse" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Ronuk Drone Horse</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Ronuk_Drone_Horse.blend"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/ronuk.jpg" alt="Ronuk Drone Horse" loading="lazy">
+  <div class="name">Ronuk Drone Horse</div>
+  <div class="meta">Blender</div>
+  <div class="meta">17 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/Ronuk_Drone_Horse.blend"><i data-lucide="download"></i>Download</a>
+</div>
 
-    <div class="card">
-      <img src="thumbs/visor.jpg" alt="Classic Visor" loading="lazy">
-      <div class="card-body">
-        <div class="card-title">Classic Visor</div>
-        <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/classic-visor.zip"><i data-lucide="download"></i>Download</a>
-      </div>
-    </div>
+<div class="row">
+  <img src="thumbs/visor.jpg" alt="Classic Visor" loading="lazy">
+  <div class="name">Classic Visor</div>
+  <div class="meta">Slicer</div>
+  <div class="meta">5 MB</div>
+  <a class="btn" href="https://github.com/DirectrixPhantom/models/releases/download/files/classic-visor.zip"><i data-lucide="download"></i>Download</a>
+</div>
 
-  </div>
-</main>
+</div>
 <script src="vendor/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
 </body>
